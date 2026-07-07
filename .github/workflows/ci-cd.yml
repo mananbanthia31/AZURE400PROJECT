@@ -23,6 +23,11 @@ jobs:
           cd helloworld
           npm install
           
+      - name: Run Tests
+        run: |
+          cd helloworld
+          npm test
+          
       - name: Run Security Audit
         run: |
           cd helloworld
