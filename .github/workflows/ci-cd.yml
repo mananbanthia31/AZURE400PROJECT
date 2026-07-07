@@ -31,4 +31,11 @@ jobs:
       - name: Run Security Audit
         run: |
           cd helloworld
-          npm audit --audit-level=high   
+          npm audit --audit-level=high 
+          
+      - name: Deploy to Azure Web App
+        uses: azure/webapps-deploy@v3
+        with:
+           app-name: azure400project-manan3112
+           publish-profile: ${{ secrets.AZURE_WEBAPP_PUBLISH_PROFILE }}
+           package: ./helloworld
